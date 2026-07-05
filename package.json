@@ -1,0 +1,45 @@
+{
+  "name": "Collab-visual-ide",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "dev:with-signaling": "node scripts/signaling-server.mjs & nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "start": "node .output/server/index.mjs",
+    "typecheck": "nuxi typecheck",
+    "check": "npm run typecheck && npm run test:ci && npm run build",
+    "test:ci": "vitest run --maxWorkers=1 --no-file-parallelism --reporter=dot --silent=passed-only"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.11.3",
+    "lucide-vue-next": "^1.0.0",
+    "nanoid": "^5.1.16",
+    "nuxt": "^4.4.8",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0",
+    "ws": "^8.18.0",
+    "yjs": "^13.6.31"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.5.14",
+    "@vitest/ui": "4.1.9",
+    "@vue/test-utils": "2.4.11",
+    "happy-dom": "20.10.6",
+    "typescript": "^6.0.3",
+    "vitest": "4.1.9",
+    "vue-tsc": "^3.3.6"
+  },
+  "engines": {
+    "node": ">=22.18.0 <25"
+  }
+}
